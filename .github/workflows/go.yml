@@ -27,7 +27,7 @@ jobs:
       - name: Build and Publish the Docker image to DockerHub
         uses: docker://goreng/publish-docker-github-action:v2.4
         with:
-          name: ymer/mydemo
+          name: ymer/beyond
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: docker/Dockerfile
