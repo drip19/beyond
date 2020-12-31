@@ -7,7 +7,7 @@ K := $(foreach exec,$(EXECUTABLES),\
 
 GO ?= latest
 
-BINARY = gmydemo
+BINARY = gbeyond
 MAIN = $(shell pwd)/cmd/main.go
 
 BUILDDIR = $(shell pwd)/build
