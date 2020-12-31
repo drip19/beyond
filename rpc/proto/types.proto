@@ -1,0 +1,29 @@
+syntax = "proto3";
+package proto;
+option go_package = ".;proto";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+service PingAPI {
+    rpc Info(google.protobuf.Empty) returns (String){
+        option (google.api.http) = {
+          get: "/ping/info"
+        };
+    }
+
+    rpc Status(google.protobuf.Empty) returns (Boolean){
+        option (google.api.http) = {
+          get: "/ping/status"
+        };
+    }
+}
+
+
+message Boolean {
+    bool value = 1;
+}
+
+message String {
+    string value = 1;
+}
