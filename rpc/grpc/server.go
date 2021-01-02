@@ -44,7 +44,7 @@ func NewServer(cfg *config.Config) *Server {
 }
 
 func (g *Server) Start() error {
-	network, address, err := util.Scheme(g.cfg.RPCCfg.GRPCListenAddress)
+	network, address, err := util.Scheme(g.cfg.GRPCCfg.GRPCListenAddress)
 	if err != nil {
 		return err
 	}
@@ -64,7 +64,7 @@ func (g *Server) Start() error {
 		}
 	}()
 	go func() {
-		if err := g.newGateway(address, g.cfg.RPCCfg.ListenAddress); err != nil {
+		if err := g.newGateway(address, g.cfg.GRPCCfg.ListenAddress); err != nil {
 			g.logger.Errorf("gateway listen err: %s", err)
 		}
 	}()
@@ -93,7 +93,7 @@ func (g *Server) newGateway(grpcAddress, gwAddress string) error {
 	if err != nil {
 		return err
 	}
-	handler := newCorsHandler(gwmux, g.cfg.RPCCfg.CORSAllowedOrigins)
+	handler := newCorsHandler(gwmux, g.cfg.GRPCCfg.CORSAllowedOrigins)
 
 	g.srv = &http.Server{
 		Addr:    address,
