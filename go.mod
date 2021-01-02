@@ -1,4 +1,4 @@
-module github.com/ymer/mydemo
+module github.com/drip/beyond
 
 go 1.15
 
