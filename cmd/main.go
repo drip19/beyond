@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/ymer/mydemo/config"
-	"github.com/ymer/mydemo/pkg/log"
-	"github.com/ymer/mydemo/pkg/util"
-	"github.com/ymer/mydemo/rpc"
+	"github.com/drip/beyond/config"
+	"github.com/drip/beyond/pkg/log"
+	"github.com/drip/beyond/pkg/util"
+	"github.com/drip/beyond/rpc"
 	"os"
 	"os/signal"
 	"syscall"

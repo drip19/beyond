@@ -2,7 +2,7 @@ package log
 
 import (
 	"fmt"
-	"github.com/ymer/mydemo/pkg/util"
+	"github.com/drip/beyond/pkg/util"
 	"os"
 	"path/filepath"
 
@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	logfile = "mydemo.log"
+	logfile = "beyond.log"
 )
 
 var (

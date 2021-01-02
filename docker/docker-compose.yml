@@ -2,8 +2,8 @@ version: "3.5"
 
 services:
   trading-test:
-    image: ymer/mydemo:main
-    container_name: mydemo-test
+    image: drip/beyond:main
+    container_name: beyond-test
     command:
 #     这里是要访问宿主机的地址，因此不能使用127.0.0.1或者0.0.0.0，因为这些localhost都是容器内的本地
 #     要想连接宿主机网络，一个方式就是直接使用宿主机IP
@@ -13,24 +13,16 @@ services:
       - "29706:29706"
 
 #    networks:
-#      - ymer-demo
+#      - drip-beyond
 
-    healthcheck:
-      test: ["CMD-SHELL", "curl http://127.0.0.1:29705/ping/status || exit 0"]
-#      test: ["CMD-SHELL", "echo 123"]
-      #      test: ["CMD", "curl", "-f", "http://127.0.0.1:29705/ping/status"]
-#      test: curl -f http://localhost:29705/ping/status
-      interval: 30s
-      timeout: 10s
-      retries: 3
 
     volumes:
 #      ./data 指的是在宿主机的docker-compose.yml同目录文件夹下
-#      /root/.gdemo 是容器里的目录，root是用户，这个容器以root用户启动，当然也可以模仿qlc以qlcchain用户启动
-#      .gdemo是配置cfg.go文件里的目录
-      - ./data:/root/.gdemo
+#      /root/.gbeyond 是容器里的目录，root是用户，这个容器以root用户启动，当然也可以模仿q以qchain用户启动
+#      .gbeyond是配置cfg.go文件里的目录
+      - ./data:/root/.gbeyond
     restart: unless-stopped
-#
+
 #networks:
-#  ymer-demo:
-#    name: ymer-demo
+#  drip-beyond:
+#    name: drip-beyond

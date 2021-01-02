@@ -2,7 +2,7 @@ package config
 
 import (
 	"encoding/json"
-	"github.com/ymer/mydemo/pkg/util"
+	"github.com/drip/beyond/pkg/util"
 	"io/ioutil"
 	"os"
 	"os/user"
@@ -14,8 +14,8 @@ import (
 )
 
 const (
-	cfgDir    = "gDemo"
-	nixCfgDir = ".gdemo"
+	cfgDir    = "gbeyond"
+	nixCfgDir = ".gbeyond"
 )
 
 type Config struct {

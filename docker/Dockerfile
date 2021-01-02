@@ -20,6 +20,6 @@ COPY --from=builder /chandler/beyond/build/gbeyond /usr/local/bin/gbeyond
 #HEALTHCHECK --interval=30s --timeout=30s --retries=3 CMD curl -f http://127.0.0.1:29705/ping/info
 
 # ENTRYPOINT： container启动时执行的命令，而且一定会被执行，如果一个Dockerfile文件中有多个，只有最后一个生效
-# 这里就是启动编译出来的gmydemo文件
+# 这里就是启动编译出来的gbeyond文件
 ENTRYPOINT [ "gbeyond"]
 
