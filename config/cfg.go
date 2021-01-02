@@ -23,15 +23,30 @@ type Config struct {
 	LogLevel string   `json:"logLevel" long:"level" description:"log level" default:"debug"` //info,warn,debug.
 	Names    []string `json:"names"  validate:"min=0"`
 	Endpoint string   `json:"endpoint" long:"endpoint" description:"endpoint" default:"ws://127.0.0.1:29736"`
+	GRPCCfg  *GRPCCfg `json:"grpc" validate:"nonnil"`
 	RPCCfg   *RPCCfg  `json:"rpc" validate:"nonnil"`
 }
 
-type RPCCfg struct {
+type GRPCCfg struct {
 	// TCP or UNIX socket address for the RPC server to listen on
 	ListenAddress string `json:"listenAddress" long:"listenAddress" description:"RPC server listen address" default:"tcp://0.0.0.0:29705"`
 	// TCP or UNIX socket address for the gRPC server to listen on
 	GRPCListenAddress  string   `json:"gRPCListenAddress" long:"grpcAddress" description:"GRPC server listen address" default:"tcp://0.0.0.0:29706"`
 	CORSAllowedOrigins []string `json:"allowedOrigins" long:"allowedOrigins" description:"AllowedOrigins of CORS" default:"*"`
+}
+
+type RPCCfg struct {
+	Enable           bool     `json:"rpcEnabled"`
+	HTTPEndpoint     string   `json:"httpEndpoint" long:"httpEndpoint" default:"tcp://0.0.0.0:29707"`
+	HTTPCors         []string `json:"httpCors" default:"*"`
+	HttpVirtualHosts []string `json:"httpVirtualHosts" default:"*"`
+	HTTPEnabled      bool     `json:"httpEnabled" `
+
+	WSEndpoint string `json:"webSocketEndpoint" long:"WSEndpoint" default:"tcp://0.0.0.0:29708"`
+	WSEnabled  bool   `json:"webSocketEnabled" `
+
+	IPCEndpoint string `json:"ipcEndpoint"`
+	IPCEnabled  bool   `json:"ipcEnabled" `
 }
 
 func (c *Config) LogDir() string {

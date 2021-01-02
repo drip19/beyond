@@ -1,14 +1,14 @@
-package rpc
+package grpc
 
 import (
 	"context"
 	"fmt"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/drip/beyond/config"
 	"github.com/drip/beyond/pkg/log"
 	"github.com/drip/beyond/pkg/util"
-	"github.com/drip/beyond/rpc/apis"
-	pb "github.com/drip/beyond/rpc/proto"
+	"github.com/drip/beyond/rpc/grpc/apis"
+	pb "github.com/drip/beyond/rpc/grpc/proto"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"

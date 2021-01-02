@@ -2,11 +2,11 @@ package apis
 
 import (
 	"context"
-	"github.com/golang/protobuf/ptypes/empty"
-	qlcchain "github.com/qlcchain/qlc-go-sdk"
 	"github.com/drip/beyond/config"
 	"github.com/drip/beyond/pkg/log"
-	pb "github.com/drip/beyond/rpc/proto"
+	pb "github.com/drip/beyond/rpc/grpc/proto"
+	"github.com/golang/protobuf/ptypes/empty"
+	qlcchain "github.com/qlcchain/qlc-go-sdk"
 	"go.uber.org/zap"
 )
 
